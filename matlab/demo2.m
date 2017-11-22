@@ -12,8 +12,8 @@ param.occ_threshold = 0.8;   % threshold for fwd+bwd consisntency check
 
 param.P2 = 600;
 param.weight_file = '../net/sintel.caffemodel';
-im1 = imread('../data/frame_0001.png');
-im2 = imread('../data/frame_0002.png');
+im1 = imread('../data/im1.png');
+im2 = imread('../data/im2.png');
 
 caffe.set_mode_gpu();
 net = caffe.Net(param.model_file, param.weight_file, 'test');

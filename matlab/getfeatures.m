@@ -1,8 +1,8 @@
 function [feat_1, feat_2] = getfeatures(im1_ori, im2_ori, param, net)
   maxDisp = param.maxDisp;   ratio = param.ratio;
   im1 = im2double(im1_ori); im2 = im2double(im2_ori);
-  im1 = max(min(imresize(im1(1:end-mod(size(im1_ori,1),ratio),1:end-mod(size(im1_ori,2),ratio),:),1/ratio),1),0);
-  im2 = max(min(imresize(im2(1:end-mod(size(im2_ori,1),ratio),1:end-mod(size(im2_ori,2),ratio),:),1/ratio),1),0);
+  %im1 = max(min(imresize(im1(1:end-mod(size(im1_ori,1),ratio),1:end-mod(size(im1_ori,2),ratio),:),1/ratio),1),0);
+  %im2 = max(min(imresize(im2(1:end-mod(size(im2_ori,1),ratio),1:end-mod(size(im2_ori,2),ratio),:),1/ratio),1),0);
 
   [M, N, ~] = size(im1);
   range = -floor(maxDisp/ratio):floor(maxDisp/ratio);
