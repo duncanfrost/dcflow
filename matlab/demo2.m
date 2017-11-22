@@ -19,3 +19,25 @@ caffe.set_mode_gpu();
 net = caffe.Net(param.model_file, param.weight_file, 'test');
 
 [feat1, feat2] = getfeatures(im1, im2, param, net);
+
+s = prod(size(feat1));
+nChannels = size(feat1,3); 
+width = size(feat1,2);
+
+display(nChannels);
+display(nChannels);
+
+total = 0;
+
+fileID = fopen('test.bin', 'w');
+for y_m = 1:size(feat1,1)
+    for x_m = 1:size(feat1,2)
+        A = zeros(nChannels,1);
+        for c_m = 1:size(feat1,3)
+            A(c_m) = feat1(y_m,x_m,c_m);
+        end
+        fwrite(fileID,A,'float');
+    end
+end
+fclose(fileID);
+
