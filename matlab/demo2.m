@@ -41,3 +41,12 @@ for y_m = 1:size(feat1,1)
 end
 fclose(fileID);
 
+feat = permute(feat1, [3 2 1]);
+
+fileID = fopen('test2.bin', 'w');
+fwrite(fileID,feat,'float');
+fclose(fileID);
+
+
+
+
