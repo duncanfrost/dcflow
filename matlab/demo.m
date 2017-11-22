@@ -1,6 +1,6 @@
 close all; clear all;
 
-addpath('external/caffe/matlab')
+addpath('/home/duncanlocal/source/caffe/matlab')
 
 param.model_file = '../net/deploy.prototxt';
 param.maxDisp = 242; % maximum displacement for both x and y direction
