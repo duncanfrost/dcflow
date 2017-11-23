@@ -24,28 +24,23 @@ s = prod(size(feat1));
 nChannels = size(feat1,3); 
 width = size(feat1,2);
 
-display(nChannels);
-display(nChannels);
+% fileID = fopen('test.bin', 'w');
+% for y_m = 1:size(feat1,1)
+%     for x_m = 1:size(feat1,2)
+%         A = zeros(nChannels,1);
+%         for c_m = 1:size(feat1,3)
+%             A(c_m) = feat1(y_m,x_m,c_m);
+%         end
+%         fwrite(fileID,A,'float');
+%     end
+% end
+% fclose(fileID);
 
-total = 0;
+% feat = permute(feat1, [3 2 1]);
 
-fileID = fopen('test.bin', 'w');
-for y_m = 1:size(feat1,1)
-    for x_m = 1:size(feat1,2)
-        A = zeros(nChannels,1);
-        for c_m = 1:size(feat1,3)
-            A(c_m) = feat1(y_m,x_m,c_m);
-        end
-        fwrite(fileID,A,'float');
-    end
-end
-fclose(fileID);
-
-feat = permute(feat1, [3 2 1]);
-
-fileID = fopen('test2.bin', 'w');
-fwrite(fileID,feat,'float');
-fclose(fileID);
+% fileID = fopen('test2.bin', 'w');
+% fwrite(fileID,feat,'float');
+% fclose(fileID);
 
 
 
